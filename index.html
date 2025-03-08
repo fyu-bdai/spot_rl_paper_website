@@ -243,7 +243,9 @@
             <img src="static/images/CMAES.png" alt="CMA-ES illustration">
           </figure>
           <p>
-            Placeholder text for the CMA-ES section.
+            To achieve our performance on hardware, we devised a novel simulation hyperparameter optimization. 
+            We collect hardware data through baseline policy rollouts and use them as a target for our simulator performance. We quantify our sim-to-real gap using Wasserstein distance and Maximum Mean Discrepancy and use CMAES to optimize the hyperparameters to minimize the dissimilarity in our rollouts. 
+            This procedure enables us to deploy policies capable of 5.2m/s locomotion, robustness to slippery surfaces, disturbance rejection, and overall agility previously unseen on Spot.
           </p>
         </div>
 
