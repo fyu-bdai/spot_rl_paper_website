@@ -166,7 +166,7 @@
             Matrix Adaptation Evolution Strategy to optimize simulated
             parameters that are unknown or difficult to measure from
             Spot. Our procedure for modeling and training produces high-quality reinforcement learning policies capable of multiple gaits,
-            including a flight phase. We deploy policies capable of over
+            including a flight phase. we deploy policies capable of over
             5.2m/s locomotion, more than triple Spot’s default controller
             maximum speed, robustness to slippery surfaces, disturbance
             rejection, and overall agility previously unseen on Spot. We
@@ -190,13 +190,13 @@
         <!-- Overview Section -->
         <div class="content has-text-centered">
           <h3 class="title is-4">Overview</h3>
-          <figure class="image">
+          <figure class="image" style="transform: scale(1.2); padding-top: 50px; padding-bottom: 40px;">
             <img src="static/images/system_diagram_vertical.png" alt="Overview illustration">
           </figure>
           <p>
             Visual overview of the training and deployment pipeline. On the left, is an approximation of how the policy is trained in simulation, and on the
-            right, is how it’s deployed on hardware. IsaacLab is the simulation environment, provides the physics engine, and employs our modeling for training. We
-            deploy our policies on Spot using an Nvidia Jetson Orin that communicates with the Boston Dynamics API for state estimates and sends motor control
+            right, is how it is deployed on hardware. IsaacLab is the simulation environment, provides the physics engine, and employs our modeling for training. Policies 
+            are deployed on Spot using an Nvidia Jetson Orin that communicates with the Boston Dynamics API for state estimates and sends motor control
             law values with the Spot RL Researcher Development Kit to command the motors.
           </p>
         </div>
@@ -208,12 +208,11 @@
             <img src="static/images/CMAES.png" alt="CMA-ES illustration">
           </figure>
           <p>
-            To achieve our performance on hardware, we devised a novel simulation hyperparameter optimization. 
-            We collect hardware data through baseline policy rollouts and use them as a target for our simulator performance. We quantify our sim-to-real gap using Wasserstein distance and Maximum Mean Discrepancy and use CMAES to optimize the hyperparameters to minimize the dissimilarity in our rollouts. 
+            A novel simulation hyperparameter optimization method was necessary to achieve high speed gaits on hardware. Hardware data is collected from an initial baseline policy
+            to be used as targets for optimizing simulation parameters. Sim-to-real gap between simulated policy rollouts and hardware is quantized using Wasserstein distance and Maximum Mean Discrepancy, and CMAES is used to optimize this objective.
             This procedure enables us to deploy policies capable of 5.2m/s locomotion, robustness to slippery surfaces, disturbance rejection, and overall agility previously unseen on Spot.
           </p>
         </div>
-
       </div>
     </div>
   </div>
